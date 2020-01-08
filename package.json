@@ -1,0 +1,24 @@
+{
+  "name": "validatorjs-tutorial",
+  "version": "1.0.0",
+  "description": "How to handle data validation with validatorjs",
+  "main": "src/main.js",
+  "author": "Nkere-Awaji Inwan (enkaypeter@gmail.com)",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/app.js",
+    "start:dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^4.13.20",
+    "morgan": "^1.9.1",
+    "validatorjs": "^3.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
