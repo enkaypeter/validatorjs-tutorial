@@ -11,7 +11,6 @@ let jwt    = require("jsonwebtoken");
 
 module.exports = {
     index: (req, res) => {
-        const welcome = ""
         return res.status(200).json({
             success: true,
             message: ":)",

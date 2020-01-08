@@ -1,4 +1,4 @@
-const Validator = require('../helpers/validate');
+const validator = require('../helpers/validate');
 
 const login = (req, res, next) => {
     const validationRule = {
@@ -6,7 +6,7 @@ const login = (req, res, next) => {
         password: 'required|string',
     };
 
-    Validator(req.body, validationRule, {}, (err, status) => {
+    validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
             res.status(412)
                 .send({
@@ -20,16 +20,16 @@ const login = (req, res, next) => {
     });
 };
 
-const signup = (req, res, next) => {
+const signup = async (req, res, next) => {
     const validationRule = {
         "email": "required|string|email",
-        "username": "required|string|",
+        "username": "required|string",
         "phone": "required|string",
         "password": "required|string|min:6|confirmed",
         "gender": "string"
-    }
-
-    Validator(req.body, validationRule, {}, (err, status) => {
+    };
+    
+    await validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
             res.status(412)
                 .send({
@@ -40,7 +40,7 @@ const signup = (req, res, next) => {
         } else {
             next();
         }
-    });
+    }).catch( err => console.log(err))
 }
 
 module.exports = {
