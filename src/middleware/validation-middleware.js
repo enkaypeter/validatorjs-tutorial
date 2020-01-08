@@ -26,6 +26,7 @@ const signup = (req, res, next) => {
         "username": "required|string|",
         "phone": "required|string",
         "password": "required|string|min:6|confirmed",
+        "gender": "string"
     }
 
     Validator(req.body, validationRule, {}, (err, status) => {
