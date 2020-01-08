@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express();
 const baseController = require("../controllers/base-controller");
-const validation = require('../middleware/validation-middleware');
+const validationMiddleware = require('../middleware/validation-middleware');
 
 
 
 router.get("/", baseController.index);
-router.post("/signup", validation.signup, baseController.signup)
+router.post("/signup", validationMiddleware.signup, baseController.signup)
 
 module.exports = router;

@@ -1,17 +1,7 @@
-const express = require("express");
-const router = express();
-const config = require("../config");
-// const User = require("../models");
-// const bcrypt = require("bcryptjs");
-
-router.set("loginSecret", config.secret);
-
-
-let jwt    = require("jsonwebtoken");
+const { User } = require("../models");
 
 module.exports = {
     index: (req, res) => {
-        const welcome = ""
         return res.status(200).json({
             success: true,
             message: ":)",
@@ -19,11 +9,25 @@ module.exports = {
     },
 
     signup: (req, res) => {
+
+        const { email, gender, username, password, phone} = req.body;
+        const newUserObj = { email, gender, username, password, phone};
+        const newUser = new User(newUserObj);
+
+        newUser.save((saveErr) => {
+            if(saveErr) {
+                return res.status(412).send({
+                    success: false,
+                    message: saveErr
+                })
+            }
+            return res.status(200).json({
+                success: true,
+                message: "signup successful"
+            });
+        });
         
-        return res.status(200).json({
-            success: true,
-            message: "signup successful"
-        })
+        
     }
 
 }
