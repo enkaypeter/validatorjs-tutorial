@@ -24,7 +24,6 @@ const UserSchema = mongoose.Schema({
     phone: {
         type: "string",
         required: true,
-        unique: true
     },
 
     gender: {
