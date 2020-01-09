@@ -7,7 +7,7 @@ const UserSchema = mongoose.Schema({
     username: {
         type: 'string',
         required: true,
-        unique: true,
+        unique: true
     },
     
     password: {
@@ -23,12 +23,11 @@ const UserSchema = mongoose.Schema({
 
     phone: {
         type: "string",
-        required: true,
+        required: true
     },
 
     gender: {
-        type: "string",
-        required: true,
+        type: "string"
     }
 
 });
