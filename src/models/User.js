@@ -24,17 +24,11 @@ const UserSchema = mongoose.Schema({
     phone: {
         type: "string",
         required: true,
-        unique: true
     },
 
     gender: {
         type: "string",
         required: true,
-    },
-
-    dob: {
-        type: "string",
-        required: true
     }
 
 });
