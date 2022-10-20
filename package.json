@@ -14,7 +14,7 @@
     "body-parser": "^1.19.0",
     "dotenv": "^6.2.0",
     "express": "^4.17.1",
-    "mongoose": "^4.13.20",
+    "mongoose": "^4.13.21",
     "morgan": "^1.9.1",
     "validatorjs": "^3.18.1"
   },
